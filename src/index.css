@@ -330,7 +330,7 @@ body {
   color: var(--clr-dark);
 }
 
-img,
+/* img,
 picture,
 video,
 canvas,
@@ -338,7 +338,7 @@ svg {
   display: block;
   max-width: 100%;
   user-select: none;
-}
+} */
 
 button {
   display: inline-block;
