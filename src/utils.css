@@ -28,23 +28,23 @@
   text-decoration: none;
   letter-spacing: -0.05em;
   cursor: pointer;
-  background-color: var(--clr-rose);
+  background-color: var(--clr-sky);
   color: #f1f5f9;
   padding: 0.5em 1em;
   border-radius: 6px;
-  box-shadow: 0 10px 20px rgba(225, 29, 72, 0.3),
-    0 6px 6px rgba(225, 29, 72, 0.3), 0 0 100px -10px var(--clr-rose);
+  box-shadow: 0 10px 20px rgba(2, 132, 199, 0.3),
+    0 6px 6px rgba(2, 132, 199, 0.3), 0 0 100px -10px var(--clr-sky);
   transition: 0.3s;
 }
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 28px rgba(225, 29, 72, 0.25),
-    0 10px 10px rgba(225, 29, 72, 0.25), 0 0 120px -10px var(--clr-rose);
+  box-shadow: 0 14px 28px rgba(2, 132, 199, 0.25),
+    0 10px 10px rgba(2, 132, 199, 0.25), 0 0 120px -10px var(--clr-sky);
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 0.5rem;
@@ -80,12 +80,12 @@
 @media (min-width: 1024px) {
   .container {
     max-width: 1024px;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
 
   .section {
-    margin-top: 10rem;
+    margin-top: 8rem;
   }
 }
 

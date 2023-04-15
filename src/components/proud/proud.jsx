@@ -7,7 +7,7 @@ function Proud() {
 
   return (
     <section className="proud container section">
-      <h2 className="proud__title">Shoes we are proud of: </h2>
+      <h2 className="proud__title">Shoes we are proud of </h2>
       <div className="proud__item-container">
         {filteredItems.map((item) => (
           <ProudItem item={item} />
