@@ -15,22 +15,33 @@ a {
 }
 
 .proud__item {
-  border: 1px solid var(--clr-slate400);
+  outline: 2px solid rgb(226, 226, 226);
+  outline-offset: -2px;
   transition: 0.3s;
 }
 
-.proud__item:hover {
-  border: 1px solid var(--clr-sky);
+.proud__img-overlay {
+  position: relative;
+}
+
+.proud__img-overlay::after {
+  content: "";
+  background-color: rgba(7, 10, 19, 0);
+  width: 100%;
+  height: calc(100% - 6px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: 0.3s ease-in;
+}
+
+.proud__img-overlay:hover::after {
+  background-color: rgba(7, 10, 19, 0.1);
 }
 
 .proud__item-header img {
   width: 100%;
-  border-bottom: 1px solid var(--clr-slate400);
-  transition: 0.3s;
-}
-
-.proud__item-header:hover img {
-  border-bottom: 1px solid var(--clr-sky);
 }
 
 .proud__item-description {

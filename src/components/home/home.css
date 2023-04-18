@@ -44,12 +44,11 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(7, 10, 19, 0.1);
   transition: all 0.3s ease-in;
 }
 
 .home__img-overlay:hover {
-  background-color: rgba(7, 10, 19, 0.2);
+  background-color: rgba(7, 10, 19, 0.1);
 }
 
 .home__img-description {
