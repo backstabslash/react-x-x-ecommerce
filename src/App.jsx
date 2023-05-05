@@ -1,20 +1,16 @@
-import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/header/header";
-import Home from "./components/home/home";
-import Proud from "./components/proud/proud";
-import Banner from "./components/banner/banner";
-import Trending from "./components/trending/trending";
-import BannerMirrored from "./components/banner/bannerMirrored";
-import Footer from "./components/footer/footer";
+import HomePage from "./pages/home";
 
 function App() {
   return (
-    <>
-      <Header /> <Home />
-      <Proud /> <Banner />
-      <Trending /> <BannerMirrored />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route index path="/" element={<HomePage />} />{" "}
+        <Route index path="categories" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
