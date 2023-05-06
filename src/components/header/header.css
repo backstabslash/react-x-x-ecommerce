@@ -84,7 +84,6 @@
   }
 
   .header__brand {
-    color: var(--clr-slate800);
     font-size: var(--size-base);
   }
 
@@ -143,7 +142,6 @@
   }
 
   .header__brand {
-    color: var(--clr-slate800);
     font-size: var(--size-l);
   }
 
@@ -170,7 +168,6 @@
   }
 
   .header__brand {
-    color: var(--clr-slate800);
     font-size: var(--size-xl);
   }
 

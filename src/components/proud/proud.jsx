@@ -1,5 +1,5 @@
 import "./proud.css";
-import ProudItem from "./proudItem";
+import Item from "../item";
 import { items } from "../data";
 
 function Proud() {
@@ -10,7 +10,7 @@ function Proud() {
       <h2 className="proud__title">Shoes we are proud of </h2>
       <div className="proud__item-container">
         {filteredItems.map((item) => (
-          <ProudItem item={item} />
+          <Item item={item} />
         ))}
       </div>
     </section>

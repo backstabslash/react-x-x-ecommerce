@@ -1,6 +1,6 @@
-import "./proud.css";
+import "./proud/proud.css";
 
-function ProudItem({ item }) {
+function Item({ item }) {
   return (
     <div className="proud__item">
       <a href="">
@@ -18,4 +18,4 @@ function ProudItem({ item }) {
   );
 }
 
-export default ProudItem;
+export default Item;
