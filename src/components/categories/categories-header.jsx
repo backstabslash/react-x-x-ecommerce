@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./categories-header.css";
 
-function CategoriesHeader() {
-  const [btnName, setBtnName] = useState("All");
+function CategoriesHeader({ passFilter }) {
+  const [filter, setFilter] = useState("All");
 
-  const handleBtnName = (e) => {
-    setBtnName(e);
-  };
+  useEffect(() => {
+    passFilter(filter);
+  }, [filter]);
 
   return (
     <>
@@ -34,22 +34,41 @@ function CategoriesHeader() {
                   />
                 </svg>
               </button>
-              HOME
+              Home
             </Link>
             <div className="categories__header-filters">
-              <button className="categories__header-filters-btn">All</button>
-              <button className="categories__header-filters-btn">
+              <button
+                className="categories__header-filters-btn"
+                onClick={() => setFilter("All")}
+              >
+                All
+              </button>
+              <button
+                className="categories__header-filters-btn"
+                onClick={() => setFilter("Sneakers")}
+              >
                 Sneakers
               </button>
-              <button className="categories__header-filters-btn">
+              <button
+                className="categories__header-filters-btn"
+                onClick={() => setFilter("Slippers")}
+              >
                 Slippers
               </button>
-              <button className="categories__header-filters-btn">Boots</button>
-              <button className="categories__header-filters-btn">
+              <button
+                className="categories__header-filters-btn"
+                onClick={() => setFilter("Boots")}
+              >
+                Boots
+              </button>
+              <button
+                className="categories__header-filters-btn"
+                onClick={() => setFilter("Loafers")}
+              >
                 Loafers
               </button>
             </div>
-            <h3 className="categories__header-current-subtitle">ALL</h3>
+            <h3 className="categories__header-current-subtitle">{filter}</h3>
           </div>
         </div>
       </section>

@@ -62,7 +62,7 @@ function Trending() {
       </div>
       <div className="trending__item-container" id="slider">
         {filteredItems.map((item) => (
-          <TrendingItem item={item} />
+          <TrendingItem item={item} key={item.id} />
         ))}
       </div>
     </section>

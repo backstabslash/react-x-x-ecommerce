@@ -12,6 +12,7 @@
   color: var(--clr-slate800);
   font-size: var(--size-base);
   letter-spacing: -0.05em;
+  text-transform: uppercase;
 }
 
 .categories__header-current {
