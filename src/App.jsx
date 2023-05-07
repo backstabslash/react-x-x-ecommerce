@@ -7,12 +7,14 @@ import ProductPage from "./pages/product";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route index path="/" element={<HomePage />} />{" "}
-        <Route index path="/categories" element={<CategoriesPage />} />
-        <Route index path="/product/:id" element={<ProductPage />} />
-      </Routes>
+      <>
+        <Header />
+        <Routes>
+          <Route index path="/" element={<HomePage />} />{" "}
+          <Route index path="/categories" element={<CategoriesPage />} />
+          <Route index path="/product/:id" element={<ProductPage />} />
+        </Routes>
+      </>
     </BrowserRouter>
   );
 }
