@@ -10,28 +10,28 @@ function Home() {
     <section className="home container section">
       <div className="home__img-container">
         <div className="home__img-wrapper grid-one">
-          <Link to="categories">
+          <Link to="/categories" onClick={() => window.top(0, 0)}>
             <div className="home__img-overlay"></div>
             <img src={SneakersImg} alt="sneakers" />
             <p className="home__img-description">Sneakers</p>
           </Link>
         </div>
         <div className="home__img-wrapper grid-two">
-          <Link to="categories">
+          <Link to="/categories" onClick={() => window.top(0, 0)}>
             <div className="home__img-overlay"></div>
             <img src={SlippersImg} alt="slippers" />
             <p className="home__img-description">Slippers</p>
           </Link>
         </div>
         <div className="home__img-wrapper grid-three">
-          <Link to="categories">
+          <Link to="/categories" onClick={() => window.top(0, 0)}>
             <div className="home__img-overlay"></div>
             <img src={BootsImg} alt="boots" />
             <p className="home__img-description">Boots</p>
           </Link>
         </div>
         <div className="home__img-wrapper grid-three-low">
-          <Link to="categories">
+          <Link to="/categories" onClick={() => window.top(0, 0)}>
             <div className="home__img-overlay"></div>
             <img src={LoafersImg} alt="loafers" />
             <p className="home__img-description">Loafers</p>

@@ -10,8 +10,8 @@ function App() {
       <Header />
       <Routes>
         <Route index path="/" element={<HomePage />} />{" "}
-        <Route index path="categories" element={<CategoriesPage />} />
-        <Route index path="product/:id" element={<ProductPage />} />
+        <Route index path="/categories" element={<CategoriesPage />} />
+        <Route index path="/product/:id" element={<ProductPage />} />
       </Routes>
     </BrowserRouter>
   );
