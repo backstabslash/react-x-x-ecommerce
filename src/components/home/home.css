@@ -58,6 +58,7 @@
   color: #f1f5f9;
   font-size: var(--size-l);
   font-weight: 600;
+  letter-spacing: -0.05em;
 }
 
 /* xs */

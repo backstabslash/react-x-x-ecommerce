@@ -12,6 +12,7 @@ a {
   color: var(--clr-slate800);
   font-size: var(--size-l);
   margin-bottom: 1rem;
+  letter-spacing: -0.05em;
 }
 
 .proud__item {

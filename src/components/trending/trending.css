@@ -44,6 +44,7 @@ a {
 
 .trending__header-title {
   color: var(--clr-slate800);
+  letter-spacing: -0.05em;
   font-size: var(--size-l);
 }
 

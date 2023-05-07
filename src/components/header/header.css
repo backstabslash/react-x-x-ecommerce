@@ -33,6 +33,7 @@
   color: var(--clr-slate800);
   font-weight: 800;
   font-size: var(--size-s);
+  letter-spacing: -0.05em;
   cursor: pointer;
   transition: 0.3s;
 }
