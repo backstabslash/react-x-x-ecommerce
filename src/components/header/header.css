@@ -105,18 +105,6 @@
     padding-top: 1.5em;
   }
 
-  .header__sun {
-    display: block;
-    color: var(--clr-slate800);
-    width: var(--size-base);
-    height: var(--size-base);
-    transition: 0.3s;
-  }
-
-  .header__sun:hover {
-    color: var(--clr-amber);
-  }
-
   .header__cart {
     display: block;
     color: var(--clr-slate800);
@@ -145,11 +133,6 @@
     font-size: var(--size-l);
   }
 
-  .header__sun {
-    width: var(--size-xl);
-    height: var(--size-xl);
-  }
-
   .header__cart {
     width: var(--size-xl);
     height: var(--size-xl);
@@ -169,11 +152,6 @@
 
   .header__brand {
     font-size: var(--size-xl);
-  }
-
-  .header__sun {
-    width: var(--size-2xl);
-    height: var(--size-2xl);
   }
 
   .header__cart {

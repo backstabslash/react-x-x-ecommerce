@@ -6,7 +6,7 @@
 }
 
 .banner__description {
-  background-color: rgb(226, 226, 226);
+  background-color: var(--clr-gray);
   display: flex;
   flex-direction: column;
   justify-content: center;

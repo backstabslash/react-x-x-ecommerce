@@ -44,26 +44,14 @@
 
 .mobile-nav__link-line {
   border: 1px solid var(--clr-slate800);
-  padding-right: 2.5rem;
+  padding-right: 3rem;
 }
 
 .mobile-nav__utils {
   display: flex;
   margin-top: 1rem;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-}
-
-.mobile-nav__sun {
-  display: block;
-  width: var(--size-xl);
-  height: var(--size-xl);
-  color: var(--clr-slate800);
-  transition: 0.3s;
-}
-
-.mobile-nav__sun:hover {
-  color: var(--clr-amber);
 }
 
 .mobile-nav__bars {

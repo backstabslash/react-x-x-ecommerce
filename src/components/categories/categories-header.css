@@ -1,8 +1,7 @@
 .categories__header-home-btn {
-  color: var(--clr-slate800);
+  /* color: var(--clr-slate800); */
   width: var(--size-base);
   height: var(--size-base);
-  transition: 0.3s;
 }
 
 .categories__header-home-link {
@@ -13,6 +12,11 @@
   font-size: var(--size-base);
   letter-spacing: -0.05em;
   text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.categories__header-home-link:hover {
+  color: var(--clr-sky);
 }
 
 .categories__header-current {
@@ -44,6 +48,12 @@
   font-size: var(--size-base);
   letter-spacing: -0.05em;
   text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.categories__header-filters-btn:hover {
+  transform: translateY(-1px);
+  color: var(--clr-emerald);
 }
 
 /* xs */
