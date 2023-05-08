@@ -52,6 +52,7 @@
 .product__item-specs {
   font-size: var(--size-base);
   margin-bottom: 1rem;
+  text-align: justify;
 }
 
 .product__item-shopping {

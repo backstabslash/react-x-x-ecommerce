@@ -54,7 +54,7 @@ function Product() {
           <h3 className="product__item-desc">{item[0].description}</h3>
           <p className="product__item-specs">{item[0].specs}</p>
           <div className="product__item-shopping">
-            <p>Desired quantity</p>
+            <p>Desired Quantity</p>
             <div className="product__item-quantity-btns">
               <button
                 className="product__item-quantity-decrease"
@@ -73,8 +73,8 @@ function Product() {
             <p className="product__item-price">{calcPrice(quantity)}.00$</p>
           </div>
           <div className="product__item-shop-btns">
-            <button className="product__item-cart-btn btn">add to cart</button>
-            <button className="product__item-buy-btn btn">buy now</button>
+            <button className="product__item-cart-btn btn">Add to cart</button>
+            <button className="product__item-buy-btn btn">Buy now</button>
           </div>
         </div>
       </div>
