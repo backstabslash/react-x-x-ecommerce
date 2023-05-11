@@ -1,18 +1,21 @@
 import { useState, useEffect } from "react";
 import "./header.css";
 import "./mobile-nav.css";
+import "./cart.css";
 import { Link } from "react-router-dom";
+import { useCartToggle } from "../../context/cartContext";
 
 function Header() {
-  const [headerFixed, setheaderFixed] = useState(false);
+  const [headerFixed, setHeaderFixed] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
+  const { cartToggle } = useCartToggle();
 
   useEffect(() => {
     const onPageScroll = () => {
       if (window.scrollY > 0) {
-        setheaderFixed(true);
+        setHeaderFixed(true);
       } else {
-        setheaderFixed(false);
+        setHeaderFixed(false);
       }
     };
     window.addEventListener("scroll", onPageScroll);
@@ -70,7 +73,7 @@ function Header() {
           <li className="mobile-nav__link-line"></li>
         </ul>
         <div className="mobile-nav__utils">
-          <button className="mobile-nav__cart">
+          <button className="mobile-nav__cart" onClick={cartToggle}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -128,7 +131,7 @@ function Header() {
             </li>
             <li className="header__line"></li>
             <li>
-              <button className="header__cart">
+              <button className="header__cart" onClick={cartToggle}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"

@@ -13,7 +13,6 @@ function CategoriesPage() {
       <CategoriesHeader passFilter={handleChangeFilter} />
       <CategoriesMain filter={filter} />
       <Banner />
-      <Footer />
     </>
   );
 }

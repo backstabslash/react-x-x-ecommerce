@@ -3,7 +3,6 @@ import Proud from "../components/proud/proud";
 import Banner from "../components/banner/banner";
 import Trending from "../components/trending/trending";
 import BannerMirrored from "../components/banner/bannerMirrored";
-import Footer from "../components/footer/footer";
 
 function HomePage() {
   return (
@@ -13,7 +12,6 @@ function HomePage() {
       <Banner />
       <Trending />
       <BannerMirrored />
-      <Footer />
     </>
   );
 }

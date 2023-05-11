@@ -9,7 +9,6 @@ function ProductPage() {
       <Product />
       <Trending />
       <Banner />
-      <Footer />
     </>
   );
 }
