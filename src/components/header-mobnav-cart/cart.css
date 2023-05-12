@@ -253,7 +253,7 @@
 /* s */
 @media (min-width: 640px) {
   .cart {
-    width: 33rem;
+    width: 38rem;
   }
 
   .cart__body__items-container {
@@ -262,7 +262,7 @@
   }
 
   .cart__item {
-    height: 12rem;
+    height: 13rem;
     grid-template-columns: 40fr 40fr 20fr;
   }
 
