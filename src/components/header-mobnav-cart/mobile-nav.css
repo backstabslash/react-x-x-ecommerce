@@ -66,18 +66,6 @@
   color: var(--clr-emerald);
 }
 
-.mobile-nav__cart {
-  display: block;
-  width: var(--size-xl);
-  height: var(--size-xl);
-  color: var(--clr-slate800);
-  transition: 0.3s;
-}
-
-.mobile-nav__cart:hover {
-  color: var(--clr-sky);
-}
-
 .mobile-nav__btn {
   font-size: var(--size-s);
 }

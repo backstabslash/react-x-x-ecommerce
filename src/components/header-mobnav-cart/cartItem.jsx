@@ -1,32 +1,53 @@
 import { useEffect, useState } from "react";
 import { useCart, useCartUpdate } from "../../context/cartContext";
 
-function CartItem({ id, item }) {
-  const [quantity, setQuantity] = useState(0);
+function CartItem({ id, item, totalRecalculation }) {
+  // State
+  const [quantity, setQuantity] = useState(item.quantity);
+
+  // On Item Quantity Change
+  useEffect(() => {
+    setQuantity(item.quantity);
+  }, [item.quantity]);
+
+  // Cart Context
   const cartItems = useCart();
   const updateCartItems = useCartUpdate();
 
-  const increase = () => {
-    if (quantity >= 1) {
+  // On "+" Click
+  const increaseQuantity = () => {
+    if (quantity < 100) {
       setQuantity(quantity + 1);
+
+      for (const cartItem of cartItems)
+        if (cartItem.id === item.id) cartItem.quantity++;
+      updateCartItems(cartItems);
+      totalRecalculation();
     }
   };
 
-  const decrease = () => {
+  // On "-" Click
+  const decreaseQuantity = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
+
+      for (const cartItem of cartItems)
+        if (cartItem.id === item.id) cartItem.quantity--;
+      updateCartItems(cartItems);
+      totalRecalculation();
     }
   };
 
-  const calcPrice = (quantity, item) => {
-    return quantity * item;
+  // Subtotal Recalculation
+  const subtotalRecalculation = () => {
+    return quantity * item.price;
   };
 
-  const removeFromCart = (id) => {
-    const updateCart = cartItems.filter((item) => item.id !== id);
+  // Delete Single Item On Click
+  const removeFromCart = () => {
+    const updateCart = cartItems.filter((itemDel) => itemDel.id !== item.id);
     updateCartItems(updateCart);
-    const json = JSON.stringify(cartItems.id);
-    localStorage.removeItem("cartItem", json);
+    totalRecalculation(item.price * item.quantity);
   };
 
   return (
@@ -38,20 +59,27 @@ function CartItem({ id, item }) {
         <div className="cart__item-middle">
           <p className="cart__item-name">{item.description}</p>
           <div className="cart__item-btns">
-            <button className="cart__item-btns-decrease" onClick={decrease}>
+            <button
+              className="cart__item-btns-decrease"
+              onClick={decreaseQuantity}
+            >
               -
             </button>
             <p className="cart__item-quantity">{quantity}</p>
-            <button className="cart__item-btns-increase" onClick={increase}>
+            <button
+              className="cart__item-btns-increase"
+              onClick={increaseQuantity}
+            >
               +
             </button>
           </div>
         </div>
         <div className="cart__item-right">
-          <p className="cart__item-price">
-            {calcPrice(quantity, item.price)}.00$
-          </p>
-          <button className="cart__item-delete-btn">
+          <p className="cart__item-price">{subtotalRecalculation() + ".00€"}</p>
+          <button
+            className="cart__item-delete-btn"
+            onClick={() => removeFromCart()}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

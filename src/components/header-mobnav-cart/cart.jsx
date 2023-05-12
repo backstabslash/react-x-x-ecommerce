@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./cart.css";
 import {
   useCart,
@@ -6,28 +6,30 @@ import {
   useCartToggle,
 } from "../../context/cartContext";
 import CartItem from "./cartItem";
-import { Link } from "react-router-dom";
+import EmptyCart from "../../img/cart/empty-cart.png";
 
 function Cart() {
-  // Context
+  // State
+  const [subtotal, setSubtotal] = useState(0);
+
+  // Cart Context
   const cartItems = useCart();
-  const updateCartItems = useCartUpdate();
   const { cartOpened, cartToggle } = useCartToggle();
 
-  // Local Storage Get
-  useEffect(() => {
-    const json = localStorage.getItem("cartItems");
-    const savedCart = JSON.parse(json);
-    if (savedCart) {
-      updateCartItems(savedCart);
-    }
-  }, []);
+  // Subtotal Recalculation
+  const subtotalRecalculation = (deletedPrice = 0) => {
+    let subtotal = 0;
+    for (const item of cartItems) subtotal += item.quantity * item.price;
+    subtotal -= deletedPrice;
+    setSubtotal(subtotal);
+  };
 
-  // Local Storage Set
+  // On Cart Items Change
   useEffect(() => {
-    const json = JSON.stringify(cartItems);
-    localStorage.setItem("cartItems", json);
-  }, [cartItems]);
+    if (cartItems.length > 0) {
+      subtotalRecalculation();
+    }
+  }, [cartOpened]);
 
   return (
     <>
@@ -37,13 +39,12 @@ function Cart() {
           cartOpened ? "cart__overlay-opened" : "cart__overlay-closed"
         }`}
       ></div>
-
       <div className={`cart ${cartOpened ? "cart-opened" : "cart-closed"}`}>
         <div className="cart__header">
           <h2 className="cart__header-title">
-            Your Shopping Cart ({cartItems.length})
+            Your Shopping Cart ({cartItems.length || 0})
           </h2>
-          <button className="cart__header-btn">
+          <button className="cart__header-btn" onClick={cartToggle}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -57,27 +58,42 @@ function Cart() {
             </svg>
           </button>
         </div>
-        <div className="cart__body">
-          <div className="cart__body__items-container">
-            <div className="cart__body__items-wrapper">
-              {cartItems.map((item, id) => (
-                <CartItem key={id} item={item} />
-              ))}
+        {cartItems.length ? (
+          <div className="cart__body">
+            <div className="cart__body__items-container">
+              <div className="cart__body__items-wrapper">
+                {cartItems.length &&
+                  cartItems.map((item, id) => (
+                    <CartItem
+                      key={id}
+                      item={item}
+                      totalRecalculation={subtotalRecalculation}
+                    />
+                  ))}
+              </div>
+            </div>
+            <div className="cart__footer">
+              <div className="cart__footer-subtotal">
+                <p className="cart__footer-subtotal-price">
+                  Subtotal: {subtotal + ".00€"}
+                </p>
+              </div>
+              <div className="cart__footer-checkout">
+                <button className="cart__footer-checkout-btn btn">
+                  Go to Checkout
+                </button>
+              </div>
             </div>
           </div>
-          <div className="cart__footer">
-            <div className="cart__footer-subtotal">
-              <p className="cart__footer-subtotal-price">
-                Subtotal: {123 + ".00$"}
-              </p>
-            </div>
-            <div className="cart__footer-checkout">
-              <button className="cart__footer-checkout-btn btn">
-                Go to Checkout
-              </button>
-            </div>
+        ) : (
+          <div className="cart__empty">
+            <img src={EmptyCart} alt="empty cart" />
+            <p className="cart__empty-subtitle">Your Cart is Empty</p>
+            <button onClick={cartToggle} className="cart__empty-btn btn">
+              Keep Browsing
+            </button>
           </div>
-        </div>
+        )}
       </div>
     </>
   );

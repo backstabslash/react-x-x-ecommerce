@@ -2,31 +2,66 @@ import "./product.css";
 import { items } from "../data";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import { useCart, useCartUpdate } from "../../context/cartContext";
 
 function Product() {
+  // Product
   const { id } = useParams();
   const item = items.filter((item) => item.id === parseInt(id));
+
+  // State
   const [image, setImage] = useState(item[0].img);
   const [quantity, setQuantity] = useState(1);
 
-  const changeImage = (e) => {
+  // Cart Context
+  const cartItems = useCart();
+  const updateCartItems = useCartUpdate();
+
+  // On Mouse Over Change Big Img
+  const changeMainImage = (e) => {
     setImage(e.target.src);
   };
 
-  const increase = () => {
-    if (quantity >= 1) {
-      setQuantity(quantity + 1);
-    }
+  // On "+" Click
+  const increaseQuantity = () => {
+    if (quantity >= 1) setQuantity(quantity + 1);
   };
 
-  const decrease = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
+  // On "-" Click
+  const decreaseQuantity = () => {
+    if (quantity > 1) setQuantity(quantity - 1);
   };
 
-  const calcPrice = (quantity) => {
+  // Recalculate Subtotal
+  const recalculatePrice = () => {
     return quantity * item[0].price;
+  };
+
+  // Update Cart Context State
+  const addItemQuantity = () => {
+    const productItem = item[0];
+
+    if (cartItems.length > 0) {
+      // If Array isn't Empty and Includes Item Already
+      let existence = false;
+      for (const cartItem of cartItems) {
+        if (cartItem.id === parseInt(id)) {
+          cartItem.quantity += quantity;
+          existence = true;
+        }
+      }
+      // If Array isn't Empty and Doesn't Includes Item Already
+      if (!existence) {
+        productItem.quantity = quantity;
+        cartItems.push(productItem);
+      }
+    } else {
+      // If Array is Empty Just Push First Item
+      productItem.quantity = quantity;
+      cartItems.push(productItem);
+    }
+
+    updateCartItems(cartItems);
   };
 
   return (
@@ -37,14 +72,18 @@ function Product() {
             <img src={image} alt="product" />
           </div>
           <div className="product__item-small-img">
-            <img onMouseOver={changeImage} src={item[0].img} alt="product" />
             <img
-              onMouseOver={changeImage}
+              onMouseOver={changeMainImage}
+              src={item[0].img}
+              alt="product"
+            />
+            <img
+              onMouseOver={changeMainImage}
               src={item[0].otherImgs[0]}
               alt="product"
             />
             <img
-              onMouseOver={changeImage}
+              onMouseOver={changeMainImage}
               src={item[0].otherImgs[1]}
               alt="product"
             />
@@ -58,22 +97,27 @@ function Product() {
             <div className="product__item-quantity-btns">
               <button
                 className="product__item-quantity-decrease"
-                onClick={decrease}
+                onClick={decreaseQuantity}
               >
                 -
               </button>
               <p className="product__item-quantity">{quantity}</p>
               <button
                 className="product__item-quantity-increase"
-                onClick={increase}
+                onClick={increaseQuantity}
               >
                 +
               </button>
             </div>
-            <p className="product__item-price">{calcPrice(quantity)}.00$</p>
+            <p className="product__item-price">{recalculatePrice()}.00€</p>
           </div>
           <div className="product__item-shop-btns">
-            <button className="product__item-cart-btn btn">Add to cart</button>
+            <button
+              className="product__item-cart-btn btn"
+              onClick={addItemQuantity}
+            >
+              Add to cart
+            </button>
             <button className="product__item-buy-btn btn">Buy now</button>
           </div>
         </div>

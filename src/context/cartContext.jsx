@@ -1,5 +1,4 @@
 import { createContext, useContext, useState } from "react";
-import { items } from "../components/data";
 
 const CartContext = createContext();
 const CartUpdateContext = createContext();
@@ -17,12 +16,20 @@ export function useCartToggle() {
   return useContext(CartToggleContext);
 }
 
+const localStorageSet = (cartItems) => {
+  const json = JSON.stringify(cartItems);
+  localStorage.setItem("cartItems", json);
+};
+
 export function CartProvider({ children }) {
-  const [cartItems, setCartItems] = useState(items);
+  const [cartItems, setCartItems] = useState(
+    JSON.parse(localStorage.getItem("cartItems")) || []
+  );
   const [cartOpened, setCartOpened] = useState(false);
 
   function updateCartItems(items) {
     setCartItems(items);
+    localStorageSet(items);
   }
 
   function cartToggle() {

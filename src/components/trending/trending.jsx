@@ -3,13 +3,16 @@ import TrendingItem from "./trendingItem";
 import { items } from "../data";
 
 function Trending() {
+  // Showing Elements 'til 9 Index
   const filteredItems = items.filter((item) => item.id <= 8);
 
+  // Method to Move Component's Images with the Hidden Scroll to the Left
   const slideLeft = () => {
     let slider = document.getElementById("slider");
     slider.scrollLeft = slider.scrollLeft - 256;
   };
 
+  // Method to Move Component's Images with the Hidden Scroll to the Right
   const slideRight = () => {
     let slider = document.getElementById("slider");
     slider.scrollLeft = slider.scrollLeft + 256;

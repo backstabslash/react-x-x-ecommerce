@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import "./categories-header.css";
 
 function CategoriesHeader({ passFilter }) {
+  // State
   const [filter, setFilter] = useState("All");
 
+  // Category Filter
   useEffect(() => {
     passFilter(filter);
   }, [filter]);

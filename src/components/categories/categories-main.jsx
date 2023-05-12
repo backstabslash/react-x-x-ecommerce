@@ -4,8 +4,10 @@ import "./categories-main.css";
 import { useEffect, useState } from "react";
 
 function CategoriesMain({ filter }) {
+  // State (Default Filter is "All" so Default Value is Whole Items Array)
   const [filteredItems, setFilteredItems] = useState(items);
 
+  // On Filter Change
   useEffect(() => {
     filter === "All"
       ? setFilteredItems(items)

@@ -3,6 +3,7 @@ import Item from "../item";
 import { items } from "../data";
 
 function Proud() {
+  // Showing Elements 'til 9 Index
   const filteredItems = items.filter((item) => item.id <= 8);
 
   return (

@@ -36,6 +36,7 @@ export const items = [
     lining: "Fabric 100%",
     price: 250,
     otherImgs: [Img11, Img12],
+    quantity: 0,
   },
   {
     id: 2,
@@ -49,6 +50,7 @@ export const items = [
     lining: "Fabric 100%",
     price: 35,
     otherImgs: [Img21, Img22],
+    quantity: 0,
   },
   {
     id: 3,
@@ -62,6 +64,7 @@ export const items = [
     lining: "Leather 100%",
     price: 99,
     otherImgs: [Img31, Img32],
+    quantity: 0,
   },
   {
     id: 4,
@@ -75,6 +78,7 @@ export const items = [
     lining: "Rubber 100%",
     price: 69,
     otherImgs: [Img41, Img42],
+    quantity: 0,
   },
   {
     id: 5,
@@ -88,6 +92,7 @@ export const items = [
     lining: "Rubber 100%",
     price: 145,
     otherImgs: [Img51, Img52],
+    quantity: 0,
   },
   {
     id: 6,
@@ -101,6 +106,7 @@ export const items = [
     lining: "Polyester 100%",
     price: 20,
     otherImgs: [Img61, Img62],
+    quantity: 0,
   },
   {
     id: 7,
@@ -114,6 +120,7 @@ export const items = [
     lining: "Leather 100%",
     price: 199,
     otherImgs: [Img71, Img72],
+    quantity: 0,
   },
   {
     id: 8,
@@ -127,5 +134,6 @@ export const items = [
     lining: "Leather 100%",
     price: 150,
     otherImgs: [Img81, Img82],
+    quantity: 0,
   },
 ];
