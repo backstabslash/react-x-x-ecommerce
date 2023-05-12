@@ -262,7 +262,7 @@
   }
 
   .cart__item {
-    height: 11rem;
+    height: 12rem;
     grid-template-columns: 40fr 40fr 20fr;
   }
 

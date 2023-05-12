@@ -9,10 +9,9 @@ function Header() {
   // State
   const [headerFixed, setHeaderFixed] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
-  const [cartItemsQuantity, setCartItemsQuantity] = useState(0);
 
   // Cart Context
-  const cartItems = useCart();
+  const { cartItemsLength } = useCart();
   const { cartToggle } = useCartToggle();
 
   // Fixed Header on Scroll Down
@@ -27,15 +26,11 @@ function Header() {
     window.addEventListener("scroll", onPageScroll);
   }, []);
 
-  // Hide Scrollbar when Mobile Navigation Opened
+  // Hide Scrollbar When Mobile Navigation Opened
   useEffect(() => {
     if (mobileNav) document.body.style.overflowY = "hidden";
     else document.body.style.overflowY = "auto";
   }, [mobileNav]);
-
-  useEffect(() => {
-    setCartItemsQuantity(cartItems.length);
-  }, [cartItems.length]);
 
   return mobileNav ? (
     <div
@@ -134,9 +129,9 @@ function Header() {
             <li className="header__line"></li>
             <li>
               <button
-                data-array-length={cartItems.length}
+                data-array-length={cartItemsLength}
                 className={`header__cart ${
-                  cartItems.length > 0 ? "header__cart-with-items" : ""
+                  cartItemsLength > 0 ? "header__cart-with-items" : ""
                 }`}
                 onClick={cartToggle}
               >
@@ -152,9 +147,9 @@ function Header() {
           </ul>
           <div className="header__mobile-nav">
             <button
-              data-array-length={cartItems.length}
+              data-array-length={cartItemsLength}
               className={`header__cart-mobile ${
-                cartItems.length > 0 ? "header__cart-with-items" : ""
+                cartItemsLength > 0 ? "header__cart-with-items" : ""
               }`}
               onClick={cartToggle}
             >

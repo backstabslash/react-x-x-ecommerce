@@ -14,7 +14,7 @@ function Product() {
   const [quantity, setQuantity] = useState(1);
 
   // Cart Context
-  const cartItems = useCart();
+  const { cartItems } = useCart();
   const updateCartItems = useCartUpdate();
 
   // On Mouse Over Change Big Img

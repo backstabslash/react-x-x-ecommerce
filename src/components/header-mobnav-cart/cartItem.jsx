@@ -11,7 +11,7 @@ function CartItem({ id, item, totalRecalculation }) {
   }, [item.quantity]);
 
   // Cart Context
-  const cartItems = useCart();
+  const { cartItems } = useCart();
   const updateCartItems = useCartUpdate();
 
   // On "+" Click

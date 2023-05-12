@@ -13,7 +13,7 @@ function Cart() {
   const [subtotal, setSubtotal] = useState(0);
 
   // Cart Context
-  const cartItems = useCart();
+  const { cartItems } = useCart();
   const { cartOpened, cartToggle } = useCartToggle();
 
   // Subtotal Recalculation
