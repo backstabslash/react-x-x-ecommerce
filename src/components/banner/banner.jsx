@@ -1,5 +1,6 @@
 import "./banner.css";
 import Img1 from "../../img/banners/banner.jpg";
+import { Link } from "react-router-dom";
 
 function Banner() {
   return (
@@ -11,7 +12,15 @@ function Banner() {
             Step up your shoe game with our extensive collection of trendy
             footwear - shop now at Shoeshop and step out in style!
           </p>
-          <button className="banner__description-btn btn">SHOP NOW</button>
+          <Link
+            className="banner__description-btn btn"
+            to="/categories"
+            onClick={() => {
+              window.top(0, 0);
+            }}
+          >
+            SHOP NOW
+          </Link>
         </div>
         <div className="banner__img">
           <img src={Img1} alt="banner" />

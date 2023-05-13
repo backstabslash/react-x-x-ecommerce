@@ -1,5 +1,6 @@
 import "./banner.css";
 import Img1 from "../../img/banners/banner.jpg";
+import { Link } from "react-router-dom";
 
 function BannerMirrored() {
   return (
@@ -16,7 +17,15 @@ function BannerMirrored() {
             Step up your shoe game with Shoeshop! Browse our trendy footwear
             collection, shop with ease, and elevate your style.
           </p>
-          <button className="banner__description-btn btn">SHOP NOW</button>
+          <Link
+            className="banner__description-btn btn"
+            to="/product/1"
+            onClick={() => {
+              window.top(0, 0);
+            }}
+          >
+            SHOP NOW
+          </Link>
         </div>
       </div>
     </section>
