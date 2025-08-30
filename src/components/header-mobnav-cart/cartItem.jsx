@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useCart, useCartUpdate } from "../../context/cartContext";
+import { useEffect, useState } from 'react';
+import { useCart, useCartUpdate } from '../../context/cartContext';
 
 function CartItem({ id, item, totalRecalculation }) {
   // State
@@ -19,8 +19,7 @@ function CartItem({ id, item, totalRecalculation }) {
     if (quantity < 100) {
       setQuantity(quantity + 1);
 
-      for (const cartItem of cartItems)
-        if (cartItem.id === item.id) cartItem.quantity++;
+      for (const cartItem of cartItems) if (cartItem.id === item.id) cartItem.quantity++;
       updateCartItems(cartItems);
       totalRecalculation();
     }
@@ -31,8 +30,7 @@ function CartItem({ id, item, totalRecalculation }) {
     if (quantity > 1) {
       setQuantity(quantity - 1);
 
-      for (const cartItem of cartItems)
-        if (cartItem.id === item.id) cartItem.quantity--;
+      for (const cartItem of cartItems) if (cartItem.id === item.id) cartItem.quantity--;
       updateCartItems(cartItems);
       totalRecalculation();
     }
@@ -59,32 +57,19 @@ function CartItem({ id, item, totalRecalculation }) {
         <div className="cart__item-middle">
           <p className="cart__item-name">{item.description}</p>
           <div className="cart__item-btns">
-            <button
-              className="cart__item-btns-decrease"
-              onClick={decreaseQuantity}
-            >
+            <button className="cart__item-btns-decrease" onClick={decreaseQuantity}>
               -
             </button>
             <p className="cart__item-quantity">{quantity}</p>
-            <button
-              className="cart__item-btns-increase"
-              onClick={increaseQuantity}
-            >
+            <button className="cart__item-btns-increase" onClick={increaseQuantity}>
               +
             </button>
           </div>
         </div>
         <div className="cart__item-right">
-          <p className="cart__item-price">{subtotalRecalculation() + ".00€"}</p>
-          <button
-            className="cart__item-delete-btn"
-            onClick={() => removeFromCart()}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
+          <p className="cart__item-price">{subtotalRecalculation() + '.00€'}</p>
+          <button className="cart__item-delete-btn" onClick={() => removeFromCart()}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
               <path
                 fillRule="evenodd"
                 d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"

@@ -1,6 +1,6 @@
-import "./trending.css";
-import TrendingItem from "./trendingItem";
-import { items } from "../data";
+import './trending.css';
+import TrendingItem from './trendingItem';
+import { items } from '../data';
 
 function Trending() {
   // Showing Elements 'til 9 Index
@@ -8,13 +8,13 @@ function Trending() {
 
   // Method to Move Component's Images with the Hidden Scroll to the Left
   const slideLeft = () => {
-    let slider = document.getElementById("slider");
+    let slider = document.getElementById('slider');
     slider.scrollLeft = slider.scrollLeft - 256;
   };
 
   // Method to Move Component's Images with the Hidden Scroll to the Right
   const slideRight = () => {
-    let slider = document.getElementById("slider");
+    let slider = document.getElementById('slider');
     slider.scrollLeft = slider.scrollLeft + 256;
   };
 
@@ -23,11 +23,7 @@ function Trending() {
       <div className="trending__header">
         <h2 className="trending__header-title">Trending now </h2>
         <div className="trending__header-btns">
-          <button
-            className="trending__header-btn"
-            title="scroll left"
-            onClick={slideLeft}
-          >
+          <button className="trending__header-btn" title="scroll left" onClick={slideLeft}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -42,11 +38,7 @@ function Trending() {
               />
             </svg>
           </button>
-          <button
-            className=" trending__header-btn"
-            title="scroll right"
-            onClick={slideRight}
-          >
+          <button className=" trending__header-btn" title="scroll right" onClick={slideRight}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

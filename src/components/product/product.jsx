@@ -1,8 +1,8 @@
-import "./product.css";
-import { items } from "../data";
-import { useParams } from "react-router-dom";
-import { useState } from "react";
-import { useCart, useCartUpdate } from "../../context/cartContext";
+import './product.css';
+import { items } from '../data';
+import { useParams } from 'react-router-dom';
+import { useState } from 'react';
+import { useCart, useCartUpdate } from '../../context/cartContext';
 
 function Product() {
   // Product
@@ -72,21 +72,9 @@ function Product() {
             <img src={image} alt="product" />
           </div>
           <div className="product__item-small-img">
-            <img
-              onMouseOver={changeMainImage}
-              src={item[0].img}
-              alt="product"
-            />
-            <img
-              onMouseOver={changeMainImage}
-              src={item[0].otherImgs[0]}
-              alt="product"
-            />
-            <img
-              onMouseOver={changeMainImage}
-              src={item[0].otherImgs[1]}
-              alt="product"
-            />
+            <img onMouseOver={changeMainImage} src={item[0].img} alt="product" />
+            <img onMouseOver={changeMainImage} src={item[0].otherImgs[0]} alt="product" />
+            <img onMouseOver={changeMainImage} src={item[0].otherImgs[1]} alt="product" />
           </div>
         </div>
         <div className="product__item-cart">
@@ -95,27 +83,18 @@ function Product() {
           <div className="product__item-shopping">
             <p>Desired Quantity</p>
             <div className="product__item-quantity-btns">
-              <button
-                className="product__item-quantity-decrease"
-                onClick={decreaseQuantity}
-              >
+              <button className="product__item-quantity-decrease" onClick={decreaseQuantity}>
                 -
               </button>
               <p className="product__item-quantity">{quantity}</p>
-              <button
-                className="product__item-quantity-increase"
-                onClick={increaseQuantity}
-              >
+              <button className="product__item-quantity-increase" onClick={increaseQuantity}>
                 +
               </button>
             </div>
             <p className="product__item-price">{recalculatePrice()}.00€</p>
           </div>
           <div className="product__item-shop-btns">
-            <button
-              className="product__item-cart-btn btn"
-              onClick={addItemQuantity}
-            >
+            <button className="product__item-cart-btn btn" onClick={addItemQuantity}>
               Add to cart
             </button>
             <button className="product__item-buy-btn btn">Buy now</button>

@@ -59,7 +59,7 @@ a {
 }
 
 .trending__img-overlay::after {
-  content: "";
+  content: '';
   background-color: rgba(7, 10, 19, 0);
   width: 100%;
   height: calc(100% - 6px);

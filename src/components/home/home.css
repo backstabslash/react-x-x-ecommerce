@@ -5,8 +5,8 @@
   grid-gap: 1rem;
   height: 28rem;
   grid-template-areas:
-    "one two"
-    "three three-low";
+    'one two'
+    'three three-low';
 }
 
 .grid-one {
@@ -79,8 +79,8 @@
     grid-template-rows: 1fr 1fr;
     height: 24rem;
     grid-template-areas:
-      "one two three"
-      "one two three-low";
+      'one two three'
+      'one two three-low';
   }
 
   .home__img-description {

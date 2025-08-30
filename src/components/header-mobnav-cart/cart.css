@@ -229,13 +229,17 @@
   font-size: var(--size-base);
   text-transform: uppercase;
   background-color: var(--clr-emerald) !important;
-  box-shadow: 0 10px 20px rgba(5, 150, 105, 0.3),
-    0 6px 6px rgba(5, 150, 105, 0.3), 0 0 100px -10px var(--clr-emerald) !important;
+  box-shadow:
+    0 10px 20px rgba(5, 150, 105, 0.3),
+    0 6px 6px rgba(5, 150, 105, 0.3),
+    0 0 100px -10px var(--clr-emerald) !important;
 }
 
 .cart__empty-btn:hover {
-  box-shadow: 0 14px 28px rgba(5, 150, 105, 0.25),
-    0 10px 10px rgba(5, 150, 105, 0.25), 0 0 120px -10px var(--clr-emerald) !important;
+  box-shadow:
+    0 14px 28px rgba(5, 150, 105, 0.25),
+    0 10px 10px rgba(5, 150, 105, 0.25),
+    0 0 120px -10px var(--clr-emerald) !important;
 }
 
 /* xs */

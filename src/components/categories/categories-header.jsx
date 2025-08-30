@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "./categories-header.css";
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import './categories-header.css';
 
 function CategoriesHeader({ passFilter }) {
   // State
-  const [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState('All');
 
   // Category Filter
   useEffect(() => {
@@ -16,34 +16,25 @@ function CategoriesHeader({ passFilter }) {
       <section className="categories-categories container section">
         <div className="categories__header">
           <div className="categories__header-filters">
-            <button
-              className="categories__header-filters-btn"
-              onClick={() => setFilter("All")}
-            >
+            <button className="categories__header-filters-btn" onClick={() => setFilter('All')}>
               All
             </button>
             <button
               className="categories__header-filters-btn"
-              onClick={() => setFilter("Sneakers")}
+              onClick={() => setFilter('Sneakers')}
             >
               Sneakers
             </button>
             <button
               className="categories__header-filters-btn"
-              onClick={() => setFilter("Slippers")}
+              onClick={() => setFilter('Slippers')}
             >
               Slippers
             </button>
-            <button
-              className="categories__header-filters-btn"
-              onClick={() => setFilter("Boots")}
-            >
+            <button className="categories__header-filters-btn" onClick={() => setFilter('Boots')}>
               Boots
             </button>
-            <button
-              className="categories__header-filters-btn"
-              onClick={() => setFilter("Loafers")}
-            >
+            <button className="categories__header-filters-btn" onClick={() => setFilter('Loafers')}>
               Loafers
             </button>
           </div>

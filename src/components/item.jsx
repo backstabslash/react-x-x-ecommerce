@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import "./proud/proud.css";
+import { Link } from 'react-router-dom';
+import './proud/proud.css';
 
 function Item({ item }) {
   return (
@@ -7,7 +7,7 @@ function Item({ item }) {
       <Link onClick={() => window.top(0, 0)} to={`/product/${item.id}`}>
         <div className="proud__item-header">
           <div className="proud__img-overlay">
-            <img src={item.img} alt={item.id + " " + item.description}></img>
+            <img src={item.img} alt={item.id + ' ' + item.description}></img>
           </div>
         </div>
         <div className="proud__item-description">

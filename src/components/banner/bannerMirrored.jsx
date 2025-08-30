@@ -1,6 +1,6 @@
-import "./banner.css";
-import Img1 from "../../img/banners/banner.jpg";
-import { Link } from "react-router-dom";
+import './banner.css';
+import Img1 from '../../img/banners/banner.jpg';
+import { Link } from 'react-router-dom';
 
 function BannerMirrored() {
   return (
@@ -10,12 +10,10 @@ function BannerMirrored() {
           <img src={Img1} alt="banner" />
         </div>
         <div className="banner__description">
-          <h2 className="banner__description-title">
-            Discover your perfect pair
-          </h2>
+          <h2 className="banner__description-title">Discover your perfect pair</h2>
           <p className="banner__description-text">
-            Step up your shoe game with Shoeshop! Browse our trendy footwear
-            collection, shop with ease, and elevate your style.
+            Step up your shoe game with Shoeshop! Browse our trendy footwear collection, shop with
+            ease, and elevate your style.
           </p>
           <Link
             className="banner__description-btn btn"

@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import "./trending.css";
+import { Link } from 'react-router-dom';
+import './trending.css';
 
 function TrendingItem({ item }) {
   return (
@@ -7,7 +7,7 @@ function TrendingItem({ item }) {
       <Link onClick={() => window.top(0, 0)} to={`/product/${item.id}`}>
         <div className="trending__item-header">
           <div className="trending__img-overlay">
-            <img src={item.img} alt={item.id + " " + item.description}></img>
+            <img src={item.img} alt={item.id + ' ' + item.description}></img>
           </div>
         </div>
         <div className="trending__item-description">

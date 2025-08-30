@@ -1,6 +1,6 @@
-import "./proud.css";
-import Item from "../item";
-import { items } from "../data";
+import './proud.css';
+import Item from '../item';
+import { items } from '../data';
 
 function Proud() {
   // Showing Elements 'til 9 Index

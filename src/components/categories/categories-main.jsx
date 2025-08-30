@@ -1,7 +1,7 @@
-import Item from "../item";
-import { items } from "../data";
-import "./categories-main.css";
-import { useEffect, useState } from "react";
+import Item from '../item';
+import { items } from '../data';
+import './categories-main.css';
+import { useEffect, useState } from 'react';
 
 function CategoriesMain({ filter }) {
   // State (Default Filter is "All" so Default Value is Whole Items Array)
@@ -9,7 +9,7 @@ function CategoriesMain({ filter }) {
 
   // On Filter Change
   useEffect(() => {
-    filter === "All"
+    filter === 'All'
       ? setFilteredItems(items)
       : setFilteredItems(items.filter((item) => item.category === filter));
   }, [filter]);

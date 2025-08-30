@@ -1,9 +1,9 @@
-import "./home.css";
-import { Link } from "react-router-dom";
-import SneakersImg from "../../img/home/1.png";
-import SlippersImg from "../../img/home/2.png";
-import BootsImg from "../../img/home/3.png";
-import LoafersImg from "../../img/home/4.png";
+import './home.css';
+import { Link } from 'react-router-dom';
+import SneakersImg from '../../img/home/1.png';
+import SlippersImg from '../../img/home/2.png';
+import BootsImg from '../../img/home/3.png';
+import LoafersImg from '../../img/home/4.png';
 
 function Home() {
   return (
